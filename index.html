@@ -105,26 +105,27 @@
   </div>
 
   <script>
-    const faqQuestions = document.querySelectorAll('.faq-question');
+  const faqQuestions = document.querySelectorAll('.faq-question');
 
-    faqQuestions.forEach(question => {
-      question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
-        const symbol = question.querySelector('.symbol');
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+      const answer = question.nextElementSibling;
+      const symbol = question.querySelector('.symbol');
 
-        const isOpen = answer.classList.contains('open');
-        
-        if (isOpen) {
-          answer.classList.remove('open');
-          symbol.textContent = '+';
-          symbol.classList.remove('rotate');
-        } else {
-          answer.classList.add('open');
-          symbol.textContent = '−';
-          symbol.classList.add('rotate');
-        }
-      });
+      const isOpen = answer.classList.contains('open');
+
+      if (isOpen) {
+        answer.classList.remove('open');
+        symbol.classList.remove('rotate');
+        symbol.textContent = '+';
+      } else {
+        answer.classList.add('open');
+        symbol.classList.add('rotate');
+        symbol.textContent = '−';
+      }
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
