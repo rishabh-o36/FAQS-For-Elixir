@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQs | College Tech Platform</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Frequently Asked Questions</h1>
+
+    <h2>1. Account and Access</h2>
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="text">How do I sign up on the platform?</span>
+        <span class="symbol">+</span>
+      </div>
+      <div class="faq-answer">Click the "Register" button on the homepage and fill in your college email and other
+        required details.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="text">I forgot my login credentials. What should I do?</span>
+        <span class="symbol">+</span>
+      </div>
+      <div class="faq-answer">Use the "Forgot Password" link on the login page to reset your password.</div>
+    </div>
+
+    <h2>2. Subjects and Notes</h2>
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="text">How do I find subject-wise notes?</span>
+        <span class="symbol">+</span>
+      </div>
+      <div class="faq-answer">Go to the "Notes" section and choose your department and semester to view all available
+        materials.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="text">Are the notes downloadable?</span>
+        <span class="symbol">+</span>
+      </div>
+      <div class="faq-answer">Yes, most notes are available in PDF format and can be downloaded for offline use.</div>
+    </div>
+
+    <h2>3. Events and Workshops</h2>
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="text">How can I register for events?</span>
+        <span class="symbol">+</span>
+      </div>
+      <div class="faq-answer">Visit the "Events" tab, select the event you're interested in, and click the "Register"
+        button.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="text">Are certificates provided?</span>
+        <span class="symbol">+</span>
+      </div>
+      <div class="faq-answer">Yes, certificates are usually given for participation or completion, depending on the
+        event.</div>
+    </div>
+
+    <h2>4. Announcements and Notifications</h2>
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="text">Where can I see the latest announcements?</span>
+        <span class="symbol">+</span>
+      </div>
+      <div class="faq-answer">Announcements are displayed on the homepage and under the "Announcements" section.</div>
+    </div>
+
+    <h2>5. Discussion and Queries</h2>
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="text">How can I ask questions or clear doubts?</span>
+        <span class="symbol">+</span>
+      </div>
+      <div class="faq-answer">You can use the “Ask a Query” form or post in the discussion forum under your course
+        section.</div>
+    </div>
+
+    <h2>6. Technical Issues</h2>
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="text">The site is not loading — what can I do?</span>
+        <span class="symbol">+</span>
+      </div>
+      <div class="faq-answer">Try refreshing the page, clearing your browser cache, or using a different browser. If the
+        issue persists, contact support.</div>
+    </div>
+  </div>
+
+  <script>
+    const questions = document.querySelectorAll('.faq-question');
+
+    questions.forEach((question) => {
+      const symbol = question.querySelector('.symbol');
+      const answer = question.nextElementSibling;
+
+      question.addEventListener('click', () => {
+        const isOpen = answer.classList.contains('open');
+
+        // Close other answers
+        
+        document.querySelectorAll('.faq-answer').forEach((a) => a.classList.remove('open'));
+        document.querySelectorAll('.faq-question .symbol').forEach((s) => s.textContent = '+');
+
+        if (!isOpen) {
+          answer.classList.add('open');
+          symbol.textContent = '−';
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
